@@ -36,7 +36,7 @@ export default class UserService {
       email: email,
       passwordHash: passwordHash,
     };
-    const { data } = await axios.post<IUser, IUser>(`${USER_SERVICE}/login`, user);
+    const { data } = await axios.post<IUser, IUser>(`${USER_SERVICE}/user/login`, user);
   
     return data;
   }
@@ -47,7 +47,7 @@ export default class UserService {
       email: email,
       image: image
     };
-    const { data } = await axios.post<string>(`${USER_SERVICE}/login/network`, user);
+    const { data } = await axios.post<string>(`${USER_SERVICE}/user/login/network`, user);
     return data;
   }
 
